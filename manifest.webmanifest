@@ -1,1 +1,26 @@
-{"name":"Мій графік","short_name":"Мій графік","id":"./","start_url":"./","scope":"./","display":"standalone","background_color":"#f8fcfb","theme_color":"#0d9488","lang":"uk","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
+{
+  "name": "Мій графік",
+  "short_name": "Мій графік",
+  "description": "Календар виходу книг та розділів",
+  "id": "/miy-grafik/",
+  "start_url": "/miy-grafik/",
+  "scope": "/miy-grafik/",
+  "display": "standalone",
+  "background_color": "#f8fcfb",
+  "theme_color": "#0d9488",
+  "lang": "uk",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
