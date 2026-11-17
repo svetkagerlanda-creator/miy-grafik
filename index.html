@@ -29,7 +29,7 @@ function bookDialog(id){const b=id?book(id):null;const form=`<h2>${b?'Редаг
   if(newEntries===null)return;
   const publishedCount=existing.filter(item=>item.status==='published').length;
   const removed=existing.filter(item=>item.chapter>newEntries.length).length;
-  const message='Оновити календар для «'+data.title+'»?\\nРозділів у новому графіку: '+newEntries.length+'.'+(publishedCount?'\\nОпубліковані розділи збережуть свій статус.':'')+(removed?'\\nРозділів поза новим графіком буде прибрано: '+removed+'.':'')+'\\nІндивідуально змінені дати будуть замінені новим графіком.';
+  const message='Оновити календар для «'+data.title+'»?\nРозділів у новому графіку: '+newEntries.length+'.'+(publishedCount?'\nОпубліковані розділи збережуть свій статус.':'')+(removed?'\nРозділів поза новим графіком буде прибрано: '+removed+'.':'')+'\nІндивідуально змінені дати будуть замінені новим графіком.';
   if(!confirm(message))return;
   const existingByChapter=new Map(existing.map(item=>[Number(item.chapter),item]));
   const replacement=newEntries.map((entry,i)=>{const prior=existingByChapter.get(i+1);return {id:prior?.id||uid(),bookId:b.id,chapter:i+1,date:entry.date,time:entry.time,status:prior?.status==='published'?'published':'planned'}});
