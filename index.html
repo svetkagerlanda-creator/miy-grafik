@@ -77,7 +77,7 @@ function buildScheduleEntries(b){
  if(b.mode==='manual'){entries=manualEntries(b);if(!entries)return null}
  else if(b.mode==='oneday'||b.start===b.end){if(isBreakDay(b.start,b.breaks)){alert('У день публікації запланована перерва. Зміни дату або перерву.');return null}entries=Array.from({length:b.count},()=>({date:b.start,time:b.time}))}
  else if(b.autoEnd&&b.mode!=='manual'){
-  const dates=datesOf(b.start,b.end,b.mode,b.interval,b.custom).filter(date=>!isBreakDay(date,b.breaks));
+  const dates=datesOf(b.start,b.end,b.mode==='even'?'daily':b.mode,b.interval,b.custom).filter(date=>!isBreakDay(date,b.breaks));
   const rate=Math.max(1,Number(b.chaptersDaily)||1);
   if(dates.length*rate<b.count){alert('У вибраному графіку не вистачає днів для запланованої кількості розділів.');return null}
   entries=[];
